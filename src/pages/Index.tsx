@@ -2,12 +2,7 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Publications from "@/components/Publications";
-import Contact from "@/components/Contact";
+import About from "@/components/About";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -55,12 +50,7 @@ const Index = () => {
       <Navigation />
       <main className="relative z-10">
         <Hero />
-        <Experience />
-        <Education />
-        <Projects />
-        <Skills />
-        <Publications />
-        <Contact />
+        <About />
       </main>
       <Footer />
     </div>
