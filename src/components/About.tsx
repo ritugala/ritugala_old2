@@ -6,12 +6,14 @@ interface Highlight {
   date: string;
   title: string;
   description?: string;
+  subheading?: string;
 }
 
 const highlights: Highlight[] = [
   {
     date: "Feb 2025",
     title: "Vibe coded this website",
+    subheading: "w lovable"
   },
   {
     date: "Aug 2024",
@@ -69,16 +71,23 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="flex items-start"
               >
-                <div className="w-32 text-right pr-4 font-semibold text-primary">
+                <div className="w-32 shrink-0 text-right pr-4 font-semibold text-primary">
                   {highlight.date}
                 </div>
                 
-                <div className="relative">
+                <div className="relative grow">
                   {/* Dot on timeline */}
                   <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
                   
                   <div className="pl-6">
-                    <h3 className="text-base font-semibold">{highlight.title}</h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-semibold">{highlight.title}</h3>
+                      {highlight.subheading && (
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-primary bg-opacity-20 text-primary">
+                          {highlight.subheading}
+                        </span>
+                      )}
+                    </div>
                     {highlight.description && (
                       <p className="text-muted-foreground mt-1">{highlight.description}</p>
                     )}
