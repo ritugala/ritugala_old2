@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				mono: ['JetBrains Mono', 'monospace'],
+				sans: ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -115,15 +119,63 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
-				}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						opacity: '1',
+					},
+					'50%': {
+						opacity: '0.7',
+					},
+				},
+				'flicker': {
+					'0%, 100%': {
+						opacity: '1',
+					},
+					'50%': {
+						opacity: '0.8',
+					},
+				},
+				'text-glitch': {
+					'0%, 100%': {
+						'clip-path': 'inset(0 0 0 0)',
+					},
+					'5%': {
+						'clip-path': 'inset(0.8em 0 0.4em 0)',
+					},
+					'10%': {
+						'clip-path': 'inset(0.2em 0 0.8em 0)',
+					},
+					'15%': {
+						'clip-path': 'inset(0.3em 0 0.3em 0)',
+					},
+					'20%': {
+						'clip-path': 'inset(0.5em 0 0.1em 0)',
+					},
+					'25%': {
+						'clip-path': 'inset(0.6em 0 0.4em 0)',
+					},
+					'30%': {
+						'clip-path': 'inset(0.9em 0 0.1em 0)',
+					},
+					'35%': {
+						'clip-path': 'inset(0.1em 0 0.9em 0)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-out': 'fade-out 0.5s ease-out',
-				'slide-in': 'slide-in 0.7s ease-out'
-			}
+				'slide-in': 'slide-in 0.7s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'flicker': 'flicker 3s linear infinite',
+				'text-glitch': 'text-glitch 2s linear infinite',
+			},
+			backgroundImage: {
+				'grid-pattern': 'radial-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

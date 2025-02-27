@@ -49,9 +49,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background antialiased">
+    <div className="min-h-screen bg-background antialiased relative overflow-x-hidden">
+      {/* Grid background that's visible throughout the site */}
+      <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none"></div>
+      
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Experience />

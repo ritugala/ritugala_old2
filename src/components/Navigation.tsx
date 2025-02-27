@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Code, Terminal } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -50,16 +51,20 @@ export const Navigation = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <nav className="max-w-3xl mx-auto px-4 flex justify-center">
+      <nav className="max-w-3xl mx-auto px-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <Terminal size={18} className="text-primary mr-2" />
+          <span className="font-mono text-sm font-medium">ritu@ai:~$</span>
+        </div>
         <ul className="flex space-x-4 md:space-x-6 flex-wrap justify-center">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className={`text-sm font-medium relative py-1 ${
+                className={`text-sm font-mono relative py-1 ${
                   activeSection === item.href.substring(1)
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary transition-colors"
@@ -75,6 +80,7 @@ export const Navigation = () => {
                   }
                 }}
               >
+                {activeSection === item.href.substring(1) ? '>' : ''}
                 {item.label}
                 {activeSection === item.href.substring(1) && (
                   <motion.span
