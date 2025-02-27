@@ -1,19 +1,30 @@
 
 import { motion } from "framer-motion";
-import { BriefcaseIcon } from "lucide-react";
+import { BriefcaseIcon, ExternalLinkIcon } from "lucide-react";
 
 interface ExperienceItem {
   year: string;
   position: string;
   company: string;
+  companyUrl?: string;
   description: string[];
+  logoComponent?: React.ReactNode;
 }
+
+// Simple logo component for Nexusflow.ai
+const NexusflowLogo = () => (
+  <div className="w-4 h-4 relative overflow-hidden rounded-sm inline-flex items-center justify-center mr-1 bg-primary/20">
+    <span className="text-[10px] font-bold text-primary">N</span>
+  </div>
+);
 
 const experiences: ExperienceItem[] = [
   {
     year: "2024",
     position: "Machine Learning Engineer",
-    company: "Nexus",
+    company: "Nexusflow.ai",
+    companyUrl: "https://nexusflow.ai",
+    logoComponent: <NexusflowLogo />,
     description: [
       "Post-trained open-source models to improve agentic capabilities (specific focus on function calling/tool-calling).",
       "Specifically focused on data curation and synthetic data generation for fine-tuning (100k+ data points).",
@@ -91,7 +102,20 @@ const Experience = () => {
                   <h3 className="text-lg font-medium flex flex-wrap gap-1 items-center">
                     <span>{exp.position}</span>
                     <span className="text-muted-foreground">at</span>
-                    <span className="text-primary">{exp.company}</span>
+                    {exp.companyUrl ? (
+                      <a 
+                        href={exp.companyUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline flex items-center"
+                      >
+                        {exp.logoComponent}
+                        {exp.company}
+                        <ExternalLinkIcon size={12} className="ml-1 inline" />
+                      </a>
+                    ) : (
+                      <span className="text-primary">{exp.company}</span>
+                    )}
                   </h3>
                   <ul className="mt-2 list-disc pl-5 space-y-2">
                     {exp.description.map((item, i) => (
