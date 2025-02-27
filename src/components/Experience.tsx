@@ -8,6 +8,7 @@ interface ExperienceItem {
   company: string;
   companyUrl: string;
   description: string[];
+  current?: boolean;
 }
 
 const experiences: ExperienceItem[] = [
@@ -18,7 +19,8 @@ const experiences: ExperienceItem[] = [
     companyUrl: "https://nexusflow.ai",
     description: [
       "Post-trained open-source models to improve agentic capabilities with a focus on function/tool-calling, and improved model inference latency by 25% using Speculative Decoding Methods."
-    ]
+    ],
+    current: true
   },
   {
     year: "2023",
@@ -74,7 +76,9 @@ const Experience = () => {
                 className="flex gap-6"
               >
                 <div className="flex flex-col items-center relative z-10">
-                  <div className="text-sm font-medium text-muted-foreground bg-card px-1 rounded">{exp.year}</div>
+                  <div className={`text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full`}>
+                    {exp.current ? `${exp.year} - Present` : exp.year}
+                  </div>
                   <div className="mt-2 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></div>
                 </div>
                 
