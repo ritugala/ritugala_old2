@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 interface NavItem {
   label: string;
@@ -22,6 +22,7 @@ export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,12 +81,18 @@ export const Navigation = () => {
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      window.scrollTo({
-                        top: (target as HTMLElement).offsetTop - 80,
-                        behavior: "smooth"
-                      });
+                    if (location.pathname !== '/') {
+                      // If not on home page, navigate to home page first
+                      navigate('/', { state: { scrollToSection: item.href.substring(1) } });
+                    } else {
+                      // If already on home page, just scroll to section
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        window.scrollTo({
+                          top: (target as HTMLElement).offsetTop - 80,
+                          behavior: "smooth"
+                        });
+                      }
                     }
                   }}
                 >
