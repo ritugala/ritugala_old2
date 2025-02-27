@@ -17,9 +17,7 @@ const experiences: ExperienceItem[] = [
     company: "Nexusflow.ai",
     companyUrl: "https://nexusflow.ai",
     description: [
-      "Post-trained open-source models to improve agentic capabilities (specific focus on function calling/tool-calling).",
-      "Specifically focused on data curation and synthetic data generation for fine-tuning (100k+ data points).",
-      "Improved overall model inference latency by 25% using Speculative Decoding Methods."
+      "Post-trained open-source models to improve agentic capabilities with a focus on function/tool-calling, and improved model inference latency by 25% using Speculative Decoding Methods."
     ]
   },
   {
@@ -28,9 +26,7 @@ const experiences: ExperienceItem[] = [
     company: "Oracle",
     companyUrl: "https://www.oracle.com",
     description: [
-      "Performed Customer Segmentation across 4 million customers, using clustering algorithms.",
-      "Developed a negative data generation algorithm yielding 10 million negative data points to establish a large-scale balanced dataset, and used this to create classification models to predict redemption rate with a recall of 94%.",
-      "Initiated the development of a prototype for an automated Question Answering system employing Retrieval Augmented Generation technology through LangChain, projected to reduce manual workload by 40 hours monthly."
+      "Developed a negative data generation algorithm yielding 10 million data points to create classification models predicting redemption rates with 94% recall, and prototyped an automated Q&A system using Retrieval Augmented Generation."
     ]
   },
   {
@@ -39,17 +35,7 @@ const experiences: ExperienceItem[] = [
     company: "Goldman Sachs",
     companyUrl: "https://www.goldmansachs.com",
     description: [
-      "Implemented an ETL (extract-transform-load) pipeline utilizing Kafka for migration of data from existing distributed databases to the cloud (Amazon S3, Amazon Redshift) estimated to be used by 300 simultaneous clients.",
-      "Maintained and improved the existing relational distributed database system thus saving 50 man-hours monthly."
-    ]
-  },
-  {
-    year: "2020",
-    position: "Data Scientist Intern",
-    company: "Citispotter",
-    companyUrl: "https://www.citispotter.com",
-    description: [
-      "Designed and implemented an end-to-end Chrome Extension for four social media platforms, enriching users with valuable insights from integrated ML models (Grammar Correction, Sentiment Detection) for each post on their feed."
+      "Implemented an ETL pipeline utilizing Kafka for cloud migration (S3, Redshift) supporting 300+ simultaneous clients, while maintaining and improving the existing relational distributed database system."
     ]
   }
 ];
