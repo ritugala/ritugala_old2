@@ -16,7 +16,7 @@ const highlights: Highlight[] = [
     subheading: "with lovable"
   },
   {
-    date: "Jan 2025",
+    date: "Nov 2024",
     title: "Open-source Nexusflow/Athene-V2 models",
     subheading: "post-trained Qwen 72B for tool-calling"
   },
