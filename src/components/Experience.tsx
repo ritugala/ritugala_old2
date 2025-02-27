@@ -62,10 +62,7 @@ const Experience = () => {
           <span className="terminal-dot dot-green"></span>
         </div>
         <div className="pt-4 pb-2 font-mono">
-          <div className="space-y-8 relative">
-            {/* Timeline line - positioned to go through the center of dots */}
-            <div className="absolute left-[23.5px] top-0 bottom-0 w-[1px] bg-muted"></div>
-            
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div 
                 key={index}
@@ -75,11 +72,10 @@ const Experience = () => {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="flex gap-6"
               >
-                <div className="flex flex-col items-center relative z-10">
+                <div className="flex items-center self-start">
                   <div className={`text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full whitespace-nowrap`}>
                     {exp.duration}
                   </div>
-                  <div className="mt-2 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></div>
                 </div>
                 
                 <div className="flex-1">
