@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Phone, Code } from "lucide-react";
+import { Mail, Linkedin, Github, Code } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -34,10 +34,6 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4 mb-2">
               <div className="py-2">
                 <code className="block mb-1">email: <a href="mailto:ritugala13@gmail.com" className="text-primary hover:underline">"ritugala13@gmail.com"</a>,</code>
-              </div>
-              
-              <div className="py-2">
-                <code className="block mb-1">phone: <span className="text-muted-foreground">"507-513-5058"</span>,</code>
               </div>
               
               <div className="py-2">

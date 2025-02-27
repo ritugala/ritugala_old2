@@ -144,9 +144,6 @@ const Hero = () => {
               <a href="https://github.com/ritugala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
                 GitHub
               </a>
-              <span className="text-xs bg-muted px-2 py-1 rounded">
-                507-513-5058
-              </span>
             </div>
           </div>
         </motion.div>
