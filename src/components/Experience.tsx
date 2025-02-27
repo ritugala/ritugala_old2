@@ -6,33 +6,46 @@ interface ExperienceItem {
   year: string;
   position: string;
   company: string;
-  description: string;
+  description: string[];
 }
 
 const experiences: ExperienceItem[] = [
   {
-    year: "2022",
-    position: "Product Manager AR",
-    company: "Snapchat",
-    description: "All things AR Authoring and developer experience, launched Lens Studio 5.0!"
+    year: "2024",
+    position: "Machine Learning Engineer",
+    company: "Nexus",
+    description: [
+      "Post-trained open-source models to improve agentic capabilities (specific focus on function calling/tool-calling).",
+      "Specifically focused on data curation and synthetic data generation for fine-tuning (100k+ data points).",
+      "Improved overall model inference latency by 25% using Speculative Decoding Methods."
+    ]
+  },
+  {
+    year: "2023",
+    position: "Data Science Intern",
+    company: "Oracle",
+    description: [
+      "Performed Customer Segmentation across 4 million customers, using clustering algorithms.",
+      "Developed a negative data generation algorithm yielding 10 million negative data points to establish a large-scale balanced dataset, and used this to create classification models to predict redemption rate with a recall of 94%.",
+      "Initiated the development of a prototype for an automated Question Answering system employing Retrieval Augmented Generation technology through LangChain, projected to reduce manual workload by 40 hours monthly."
+    ]
+  },
+  {
+    year: "2021",
+    position: "Software Engineer",
+    company: "Goldman Sachs",
+    description: [
+      "Implemented an ETL (extract-transform-load) pipeline utilizing Kafka for migration of data from existing distributed databases to the cloud (Amazon S3, Amazon Redshift) estimated to be used by 300 simultaneous clients.",
+      "Maintained and improved the existing relational distributed database system thus saving 50 man-hours monthly."
+    ]
   },
   {
     year: "2020",
-    position: "Senior Product Manager",
-    company: "Unity",
-    description: "XR at Unity Labs, launched Unity Slices: Table at Meta Connect"
-  },
-  {
-    year: "2018",
-    position: "Experimentation + DevRel",
-    company: "Microsoft",
-    description: "docs.microsoft.com, HoloLens and Minecraft: Education Edition"
-  },
-  {
-    year: "2017",
-    position: "Software Engineer",
-    company: "Slack + Pinterest",
-    description: "Developer tools and 3rd party integrations (APIs)"
+    position: "Data Scientist Intern",
+    company: "Citispotter",
+    description: [
+      "Designed and implemented an end-to-end Chrome Extension for four social media platforms, enriching users with valuable insights from integrated ML models (Grammar Correction, Sentiment Detection) for each post on their feed."
+    ]
   }
 ];
 
@@ -47,7 +60,7 @@ const Experience = () => {
         className="section-title neon-glow flex items-center gap-2"
       >
         <BriefcaseIcon size={16} />
-        <span>WORKIN' 9 TO 5</span>
+        <span>Experience</span>
       </motion.h2>
       <div className="terminal">
         <div className="terminal-dots">
@@ -80,7 +93,11 @@ const Experience = () => {
                     <span className="text-muted-foreground">at</span>
                     <span className="text-primary">{exp.company}</span>
                   </h3>
-                  <p className="mt-2 text-muted-foreground text-sm">{exp.description}</p>
+                  <ul className="mt-2 list-disc pl-5 space-y-2">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="text-sm text-muted-foreground leading-relaxed">{item}</li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
