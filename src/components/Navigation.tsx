@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Code, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -9,7 +9,13 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "About", href: "#about" }
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Publications", href: "#publications" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export const Navigation = () => {
@@ -65,12 +71,18 @@ export const Navigation = () => {
                 }`}
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = document.querySelector(item.href);
-                  if (target) {
-                    window.scrollTo({
-                      top: (target as HTMLElement).offsetTop - 80,
-                      behavior: "smooth"
-                    });
+                  // For sections that are on the page, scroll to them
+                  if (item.href === "#about" || item.href === "#hero") {
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      window.scrollTo({
+                        top: (target as HTMLElement).offsetTop - 80,
+                        behavior: "smooth"
+                      });
+                    }
+                  } else {
+                    // For other sections, navigate to their dedicated pages
+                    window.location.href = item.href;
                   }
                 }}
               >
