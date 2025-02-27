@@ -20,7 +20,7 @@ const highlights: Highlight[] = [
   },
   {
     date: "Nov 2024",
-    title: "Open-sourced Nexusflow/Athene-V2 models",
+    title: "Released Nexusflow/Athene-V2 models",
     subheading: "Post-trained Qwen 72B for tool-calling capabilities",
     emoji: "🤖",
     link: "https://nexusflow.ai/blogs/athene-v2"
@@ -29,7 +29,6 @@ const highlights: Highlight[] = [
     date: "Aug 2024",
     title: "Published at ACL 2024 Conference",
     description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets",
-    subheading: "With Graham Neubig and Sherry Wu",
     emoji: "🔬",
     link: "https://aclanthology.org/2024.findings-acl.385/"
   },
