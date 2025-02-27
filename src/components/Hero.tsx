@@ -136,7 +136,7 @@ const Hero = () => {
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">contact</span></div>
             <div className="flex flex-wrap gap-2 mt-1">
               <a href="mailto:ritugala13@gmail.com" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
-                ritugala13@gmail.com
+                Email
               </a>
               <a href="https://linkedin.com/in/ritu-gala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
                 LinkedIn
