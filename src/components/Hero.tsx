@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// Matrix rain effect component
+// Matrix rain effect component with reduced particle count
 const MatrixRain = () => {
   const [characters, setCharacters] = useState<{id: number, x: number, y: number, char: string, duration: number}[]>([]);
   
   useEffect(() => {
     // Characters for matrix rain
-    const matrixChars = "01abcdefghijklmnopqrstuvwxyz!@#$%&*()_+-=[]{}|;:,.<>?";
+    const matrixChars = "01";
     const generateRandom = () => {
       const newCharacters = [];
-      const totalChars = 120; // adjust based on performance
+      const totalChars = 60; // reduced from 120 for better performance
       
       for (let i = 0; i < totalChars; i++) {
         newCharacters.push({
@@ -29,16 +29,16 @@ const MatrixRain = () => {
     
     generateRandom();
     
-    // Regenerate every few seconds
+    // Regenerate less frequently
     const interval = setInterval(() => {
       generateRandom();
-    }, 10000);
+    }, 15000); // increased from 10000ms to 15000ms
     
     return () => clearInterval(interval);
   }, []);
   
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
       {characters.map((char) => (
         <div
           key={char.id}
@@ -56,7 +56,7 @@ const MatrixRain = () => {
   );
 };
 
-// Typing effect
+// Simplified typing effect
 const TypeWriter = ({ text, speed = 100 }: { text: string, speed?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -78,44 +78,44 @@ const TypeWriter = ({ text, speed = 100 }: { text: string, speed?: number }) => 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Matrix-like background */}
+      {/* Matrix-like background with reduced opacity */}
       <MatrixRain />
       
-      {/* Grid background */}
-      <div className="absolute inset-0 grid-bg opacity-20"></div>
+      {/* Simplified background */}
+      <div className="absolute inset-0 grid-bg opacity-10"></div>
       
       <div className="text-center px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
           className="mb-4 flex justify-center"
         >
-          <Terminal className="w-12 h-12 text-primary animate-glow-pulse" />
+          <Terminal className="w-12 h-12 text-primary" />
         </motion.div>
         
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold mb-3 glow neon-glow font-mono"
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-6xl font-bold mb-3 glow font-mono"
         >
           RITU GALA
         </motion.h1>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl md:text-2xl text-muted-foreground mb-6 font-mono"
         >
-          <TypeWriter text="Machine Learning Engineer" speed={80} />
+          <TypeWriter text="Machine Learning Engineer" speed={100} />
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="terminal mb-10 inline-block px-6 py-3 max-w-md mx-auto"
         >
           <div className="terminal-dots">
