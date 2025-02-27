@@ -18,9 +18,9 @@ const experiences: ExperienceItem[] = [
     company: "Nexusflow.ai",
     companyUrl: "https://nexusflow.ai",
     description: [
-      "Post-trained open-source models to improve agentic capabilities with a focus on function/tool-calling.",
-      "Improved model inference latency by 25% using Speculative Decoding Methods.",
-      "Collaborated with cross-functional teams to integrate models into production systems and optimize performance."
+      "Post-trained open-source models to improve agentic capabilities (specific focus on function calling/tool-calling).",
+      "Specifically focused on data curation and synthetic data generation for fine-tuning (100k+ data points).",
+      "Improved overall model inference latency by 25% using Speculative Decoding Methods."
     ],
     current: true
   },
