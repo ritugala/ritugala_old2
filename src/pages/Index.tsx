@@ -5,14 +5,16 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import Publications from "@/components/Publications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = "Your Name | Personal Website";
+    document.title = "Ritu Gala | Personal Website";
 
     // Smooth scroll behavior for the entire page
     document.documentElement.style.scrollBehavior = "smooth";
@@ -33,9 +35,9 @@ const Index = () => {
       });
       
       if (currentSectionId) {
-        document.title = `${currentSectionId.charAt(0).toUpperCase() + currentSectionId.slice(1)} | Your Name`;
+        document.title = `${currentSectionId.charAt(0).toUpperCase() + currentSectionId.slice(1)} | Ritu Gala`;
       } else {
-        document.title = "Your Name | Personal Website";
+        document.title = "Ritu Gala | Personal Website";
       }
     };
 
@@ -54,7 +56,9 @@ const Index = () => {
         <About />
         <Experience />
         <Education />
+        <Projects />
         <Skills />
+        <Publications />
         <Contact />
       </main>
       <Footer />

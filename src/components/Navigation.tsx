@@ -11,7 +11,9 @@ const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" }
 ];
 
@@ -52,7 +54,7 @@ export const Navigation = () => {
       }`}
     >
       <nav className="max-w-3xl mx-auto px-4 flex justify-center">
-        <ul className="flex space-x-8">
+        <ul className="flex space-x-4 md:space-x-6 flex-wrap justify-center">
           {navItems.map((item) => (
             <li key={item.label}>
               <a

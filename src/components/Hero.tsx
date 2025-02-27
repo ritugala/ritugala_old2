@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold mb-3"
         >
-          Your Name
+          RITU GALA
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-xl md:text-2xl text-muted-foreground mb-6"
         >
-          Software Engineer
+          Machine Learning Engineer
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,17 +35,19 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="flex justify-center space-x-4 mb-16"
         >
-          <a href="mailto:your.email@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
-            your.email@example.com
+          <a href="mailto:ritugala13@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
+            ritugala13@gmail.com
           </a>
           <span className="text-muted-foreground">•</span>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
+          <a href="https://linkedin.com/in/ritu-gala" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
             LinkedIn
           </a>
           <span className="text-muted-foreground">•</span>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
+          <a href="https://github.com/ritugala" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors link-item">
             GitHub
           </a>
+          <span className="text-muted-foreground">•</span>
+          <span className="text-sm text-muted-foreground">507-513-5058</span>
         </motion.div>
       </div>
       <motion.div

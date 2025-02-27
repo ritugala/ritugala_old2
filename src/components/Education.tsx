@@ -5,21 +5,38 @@ interface EducationItem {
   institution: string;
   degree: string;
   period: string;
-  description?: string;
+  location: string;
+  gpa?: string;
+  courses?: string[];
+  additionalInfo?: string[];
 }
 
 const educationItems: EducationItem[] = [
   {
-    institution: "University of Technology",
-    degree: "Master of Science in Computer Science",
-    period: "Sep 2014 - May 2016",
-    description: "Specialized in Distributed Systems and Machine Learning. Graduated with distinction."
+    institution: "Carnegie Mellon University (CMU)",
+    degree: "Master of Science in Artificial Intelligence and Innovation",
+    period: "May 2024",
+    location: "Pittsburgh, PA",
+    gpa: "GPA: 4.0/4.0",
+    courses: [
+      "Deep Learning",
+      "Advanced Natural Language Processing (NLP)",
+      "Large Language Models",
+      "Machine Learning with Large Datasets",
+      "Machine Learning in Production",
+      "Machine Learning",
+      "Behavioral Decision Making"
+    ],
+    additionalInfo: [
+      "Teaching Assistant: Generative AI, Coding Bootcamp and Algorithms"
+    ]
   },
   {
-    institution: "State University",
-    degree: "Bachelor of Science in Computer Engineering",
-    period: "Sep 2010 - May 2014",
-    description: "Dean's List for all semesters. Senior project: Developed an IoT system for smart home automation."
+    institution: "Veermata Jijabai Technological Institute (VJTI)",
+    degree: "Bachelor of Technology in Computer Science",
+    period: "May 2021",
+    location: "Mumbai, India",
+    gpa: "GPA: 3.56/4.0"
   }
 ];
 
@@ -35,7 +52,7 @@ const Education = () => {
       >
         Education
       </motion.h2>
-      <div className="space-y-8">
+      <div className="space-y-10">
         {educationItems.map((item, index) => (
           <motion.div 
             key={index}
@@ -48,10 +65,22 @@ const Education = () => {
               <h3 className="text-lg font-medium">{item.degree}</h3>
               <span className="text-sm text-muted-foreground">{item.period}</span>
             </div>
-            <p className="text-base text-muted-foreground mb-2">{item.institution}</p>
-            {item.description && (
-              <p className="text-sm">{item.description}</p>
+            <div className="flex flex-col md:flex-row justify-between mb-2">
+              <p className="text-base text-muted-foreground">{item.institution}</p>
+              <span className="text-sm text-muted-foreground">{item.location}</span>
+            </div>
+            {item.gpa && (
+              <p className="text-sm mb-2">{item.gpa}</p>
             )}
+            {item.courses && (
+              <div className="mb-2">
+                <p className="text-sm font-medium mb-1">Relevant Courses:</p>
+                <p className="text-sm">{item.courses.join("; ")}</p>
+              </div>
+            )}
+            {item.additionalInfo && item.additionalInfo.map((info, i) => (
+              <p key={i} className="text-sm mb-1">{info}</p>
+            ))}
           </motion.div>
         ))}
       </div>

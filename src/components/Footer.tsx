@@ -15,17 +15,17 @@ const Footer = () => {
           className="flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Ritu Gala. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a 
-              href="mailto:your.email@example.com" 
+              href="mailto:ritugala13@gmail.com" 
               className="text-sm text-muted-foreground hover:text-primary transition-colors link-item"
             >
               Email
             </a>
             <a 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://linkedin.com/in/ritu-gala" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-sm text-muted-foreground hover:text-primary transition-colors link-item"
@@ -33,7 +33,7 @@ const Footer = () => {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/ritugala" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-sm text-muted-foreground hover:text-primary transition-colors link-item"

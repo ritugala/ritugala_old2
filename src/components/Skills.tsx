@@ -8,20 +8,16 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Programming Languages",
-    skills: ["JavaScript", "TypeScript", "Python", "Go", "Java", "C++"]
+    name: "Languages",
+    skills: ["Python", "SQL", "Java", "JavaScript", "HTML", "C", "C++"]
   },
   {
-    name: "Web Technologies",
-    skills: ["React", "Next.js", "Node.js", "Express", "HTML/CSS", "GraphQL"]
+    name: "Machine Learning",
+    skills: ["NumPy", "Pandas", "PyTorch", "Sci-kit learn", "PySpark", "Langchain"]
   },
   {
-    name: "Tools & Platforms",
-    skills: ["Git", "Docker", "Kubernetes", "AWS", "GCP", "CI/CD"]
-  },
-  {
-    name: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
+    name: "Tools",
+    skills: ["Docker", "Jenkins", "Git", "Kafka", "AWS", "GCP", "MLFlow", "Azure"]
   }
 ];
 

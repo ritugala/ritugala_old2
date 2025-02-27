@@ -20,14 +20,15 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <p className="text-base leading-relaxed mb-6">
-          I'm a software engineer with expertise in building scalable web applications and distributed systems. 
-          With a strong foundation in computer science and years of industry experience, I specialize in designing and 
-          implementing efficient solutions to complex technical challenges.
+          I'm a Machine Learning Engineer with expertise in building and optimizing AI models and systems. 
+          With a strong foundation in Computer Science and Artificial Intelligence from Carnegie Mellon University, 
+          I specialize in developing efficient machine learning solutions for complex technical challenges.
         </p>
         <p className="text-base leading-relaxed">
-          Beyond my technical skills, I'm passionate about mentoring junior developers and contributing to 
-          open-source projects. I believe in writing clean, maintainable code and continuously learning new technologies 
-          to stay at the forefront of software development.
+          My experience spans across various domains including machine learning engineering, data science, and software 
+          development. I'm particularly interested in Large Language Models, synthetic data generation, and building 
+          systems that improve efficiency and reduce latency. I have a proven track record of implementing solutions 
+          that significantly improve performance metrics across different applications.
         </p>
       </motion.div>
     </section>
