@@ -113,16 +113,16 @@ const Hero = () => {
             <div className="text-primary">&gt; I work with LLMs, and pursue side quests in Decision Science</div>
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">contact</span></div>
             <div className="flex flex-wrap gap-2 mt-1">
-              <a href="mailto:ritugala13@gmail.com" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="mailto:ritugala13@gmail.com" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
                 Email
               </a>
-              <a href="https://linkedin.com/in/ritu-gala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="https://linkedin.com/in/ritu-gala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
                 LinkedIn
               </a>
-              <a href="https://github.com/ritugala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="https://github.com/ritugala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
                 GitHub
               </a>
-              <a href="https://x.com/ritugala13" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="https://x.com/ritugala13" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors text-primary">
                 Twitter
               </a>
             </div>

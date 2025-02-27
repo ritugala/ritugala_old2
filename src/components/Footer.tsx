@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="flex space-x-6">
             <a 
               href="mailto:ritugala13@gmail.com" 
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+              className="text-sm text-primary hover:text-primary/80 transition-colors font-mono"
             >
               Email
             </a>
@@ -30,7 +30,7 @@ const Footer = () => {
               href="https://linkedin.com/in/ritu-gala" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+              className="text-sm text-primary hover:text-primary/80 transition-colors font-mono"
             >
               LinkedIn
             </a>
@@ -38,7 +38,7 @@ const Footer = () => {
               href="https://github.com/ritugala" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono"
+              className="text-sm text-primary hover:text-primary/80 transition-colors font-mono"
             >
               GitHub
             </a>
