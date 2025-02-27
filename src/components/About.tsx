@@ -1,6 +1,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { HistoryIcon, BuildingIcon, GraduationCapIcon } from "lucide-react";
+import { HistoryIcon } from "lucide-react";
 
 interface Highlight {
   date: string;
@@ -8,7 +8,6 @@ interface Highlight {
   description?: string;
   subheading?: string;
   emoji?: string;
-  iconComponent?: React.ReactNode;
   link?: string;
 }
 
@@ -37,14 +36,14 @@ const highlights: Highlight[] = [
     date: "June 2024",
     title: "Joined Nexusflow as Machine Learning Engineer",
     description: "Relocated to the vibrant tech ecosystem of the Bay Area",
-    iconComponent: <BuildingIcon size={18} />,
+    emoji: "🏢",
     link: "https://nexusflow.ai"
   },
   {
     date: "May 2024",
     title: "Graduated from Carnegie Mellon University",
     description: "Master of Science in AI and Innovation",
-    iconComponent: <GraduationCapIcon size={18} />
+    emoji: "🎓"
   }
 ];
 
@@ -121,17 +120,6 @@ const About = () => {
                           className="mr-2 text-lg"
                         >
                           {highlight.emoji}
-                        </motion.span>
-                      )}
-                      {highlight.iconComponent && (
-                        <motion.span 
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 * index }}
-                          className="mr-2 text-primary"
-                        >
-                          {highlight.iconComponent}
                         </motion.span>
                       )}
                       {highlight.link ? (
