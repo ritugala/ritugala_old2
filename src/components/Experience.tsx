@@ -6,7 +6,7 @@ interface ExperienceItem {
   duration: string;
   position: string;
   company: string;
-  companyUrl: string;
+  companyUrl?: string;
   description: string[];
   current?: boolean;
 }
@@ -26,7 +26,6 @@ const experiences: ExperienceItem[] = [
     duration: "May 2023 - Aug 2023",
     position: "Data Science Intern",
     company: "Oracle",
-    companyUrl: "https://www.oracle.com",
     description: [
       "Developed a negative data generation algorithm yielding 10 million data points to create classification models predicting redemption rates with 94% recall, and prototyped an automated Q&A system using Retrieval Augmented Generation."
     ]
@@ -35,7 +34,6 @@ const experiences: ExperienceItem[] = [
     duration: "June 2021 - June 2022",
     position: "Software Engineer",
     company: "Goldman Sachs",
-    companyUrl: "https://www.goldmansachs.com",
     description: [
       "Implemented an ETL pipeline utilizing Kafka for cloud migration (S3, Redshift) supporting 300+ simultaneous clients, while maintaining and improving the existing relational distributed database system."
     ]
@@ -82,15 +80,19 @@ const Experience = () => {
                   <h3 className="text-lg font-medium flex flex-wrap gap-1 items-center">
                     <span>{exp.position}</span>
                     <span className="text-muted-foreground">at</span>
-                    <a 
-                      href={exp.companyUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline flex items-center"
-                    >
-                      {exp.company}
-                      <ExternalLinkIcon size={12} className="ml-1 inline" />
-                    </a>
+                    {exp.companyUrl ? (
+                      <a 
+                        href={exp.companyUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline flex items-center"
+                      >
+                        {exp.company}
+                        <ExternalLinkIcon size={12} className="ml-1 inline" />
+                      </a>
+                    ) : (
+                      <span className="text-primary">{exp.company}</span>
+                    )}
                   </h3>
                   <ul className="mt-2 list-disc pl-5 space-y-2">
                     {exp.description.map((item, i) => (
