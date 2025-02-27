@@ -87,9 +87,9 @@ const Experience = () => {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="flex gap-6"
               >
-                <div className="flex flex-col items-center">
-                  <div className="text-sm font-medium text-muted-foreground">{exp.year}</div>
-                  <div className="mt-2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                <div className="flex flex-col items-center relative z-10">
+                  <div className="text-sm font-medium text-muted-foreground bg-card px-1 rounded">{exp.year}</div>
+                  <div className="mt-2 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></div>
                 </div>
                 
                 <div className="flex-1">
