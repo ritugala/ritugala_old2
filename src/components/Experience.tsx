@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { BriefcaseIcon, ExternalLinkIcon } from "lucide-react";
 
 interface ExperienceItem {
-  year: string;
+  duration: string;
   position: string;
   company: string;
   companyUrl: string;
@@ -13,7 +13,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    year: "2024",
+    duration: "June 2024 - Present",
     position: "Machine Learning Engineer",
     company: "Nexusflow.ai",
     companyUrl: "https://nexusflow.ai",
@@ -23,7 +23,7 @@ const experiences: ExperienceItem[] = [
     current: true
   },
   {
-    year: "2023",
+    duration: "May 2023 - Aug 2023",
     position: "Data Science Intern",
     company: "Oracle",
     companyUrl: "https://www.oracle.com",
@@ -32,7 +32,7 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    year: "2021",
+    duration: "June 2021 - June 2022",
     position: "Software Engineer",
     company: "Goldman Sachs",
     companyUrl: "https://www.goldmansachs.com",
@@ -76,8 +76,8 @@ const Experience = () => {
                 className="flex gap-6"
               >
                 <div className="flex flex-col items-center relative z-10">
-                  <div className={`text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full`}>
-                    {exp.current ? `${exp.year} - Present` : exp.year}
+                  <div className={`text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full whitespace-nowrap`}>
+                    {exp.duration}
                   </div>
                   <div className="mt-2 w-4 h-4 rounded-full bg-primary ring-4 ring-background"></div>
                 </div>
