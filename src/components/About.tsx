@@ -1,5 +1,5 @@
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { HistoryIcon } from "lucide-react";
 
 interface Highlight {
@@ -48,6 +48,9 @@ const highlights: Highlight[] = [
 ];
 
 const About = () => {
+  const { scrollYProgress } = useScroll();
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <section id="about" className="section-container">
       <motion.h2 
@@ -74,13 +77,16 @@ const About = () => {
         </div>
         <div className="pt-4 font-mono text-sm">
           <div className="space-y-6 relative">
-            {/* Vertical timeline line */}
-            <div className="absolute left-16 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent"></div>
+            {/* Animated vertical timeline line */}
+            <motion.div 
+              className="absolute left-16 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent origin-top"
+              style={{ scaleY: lineHeight }}
+            ></motion.div>
             
             {highlights.map((highlight, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, x: -10 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
@@ -93,14 +99,28 @@ const About = () => {
                 
                 {/* Content column */}
                 <div className="relative grow">
-                  {/* Dot on timeline */}
-                  <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
+                  {/* Dot on timeline - animated to scale up when in view */}
+                  <motion.div 
+                    className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 * index }}
+                  ></motion.div>
                   
                   <div className="pl-6">
                     {/* Title with emoji */}
                     <h3 className="text-base font-semibold text-foreground flex items-center">
                       {highlight.emoji && (
-                        <span className="mr-2 text-lg">{highlight.emoji}</span>
+                        <motion.span 
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 * index }}
+                          className="mr-2 text-lg"
+                        >
+                          {highlight.emoji}
+                        </motion.span>
                       )}
                       {highlight.link ? (
                         <a 
