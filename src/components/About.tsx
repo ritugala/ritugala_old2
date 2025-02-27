@@ -7,33 +7,39 @@ interface Highlight {
   title: string;
   description?: string;
   subheading?: string;
+  emoji?: string;
 }
 
 const highlights: Highlight[] = [
   {
     date: "Feb 2025",
-    title: "Vibe coded this website",
-    subheading: "with lovable"
+    title: "Created personal website",
+    subheading: "Built with Lovable AI assistance",
+    emoji: "✨"
   },
   {
     date: "Nov 2024",
-    title: "Open-source Nexusflow/Athene-V2 models",
-    subheading: "post-trained Qwen 72B for tool-calling"
+    title: "Open-sourced Nexusflow/Athene-V2 models",
+    subheading: "Post-trained Qwen 72B for tool-calling capabilities",
+    emoji: "🤖"
   },
   {
     date: "Aug 2024",
-    title: "Published ACL Paper",
-    description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets"
+    title: "Published paper at ACL Conference",
+    description: "Research on synthetic data generation through retrieval and transformation",
+    emoji: "📄"
   },
   {
     date: "June 2024",
-    title: "Moved to Bay Area",
-    description: "Started working as Machine Learning Engineer at Nexusflow"
+    title: "Relocated to Bay Area",
+    description: "Joined Nexusflow as Machine Learning Engineer",
+    emoji: "🏙️"
   },
   {
     date: "May 2024",
     title: "Graduated from Carnegie Mellon University",
-    description: "Master of Science in AI and Innovation"
+    description: "Master of Science in AI and Innovation",
+    emoji: "🎓"
   }
 ];
 
@@ -87,8 +93,11 @@ const About = () => {
                   <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
                   
                   <div className="pl-6">
-                    {/* Title */}
-                    <h3 className="text-base font-semibold text-foreground">{highlight.title}</h3>
+                    {/* Title with emoji */}
+                    <h3 className="text-base font-semibold text-foreground flex items-center">
+                      {highlight.emoji && <span className="mr-2">{highlight.emoji}</span>}
+                      {highlight.title}
+                    </h3>
                     
                     {/* Additional information (subheading or description) styled consistently */}
                     {highlight.subheading && (
