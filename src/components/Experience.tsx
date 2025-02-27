@@ -64,7 +64,7 @@ const Experience = () => {
         <div className="pt-4 pb-2 font-mono">
           <div className="space-y-8 relative">
             {/* Timeline line - positioned to go through the center of dots */}
-            <div className="absolute left-[22px] top-0 bottom-0 w-[2px] bg-muted"></div>
+            <div className="absolute left-[23.5px] top-0 bottom-0 w-[1px] bg-muted"></div>
             
             {experiences.map((exp, index) => (
               <motion.div 
