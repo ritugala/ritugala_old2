@@ -8,32 +8,36 @@ interface Highlight {
   description?: string;
   subheading?: string;
   emoji?: string;
+  link?: string;
 }
 
 const highlights: Highlight[] = [
   {
     date: "Feb 2025",
-    title: "Created personal website",
-    subheading: "Built with Lovable AI assistance",
+    title: "Vibe-coded this website",
+    subheading: "Built with Lovable",
     emoji: "✨"
   },
   {
     date: "Nov 2024",
     title: "Open-sourced Nexusflow/Athene-V2 models",
     subheading: "Post-trained Qwen 72B for tool-calling capabilities",
-    emoji: "🤖"
+    emoji: "🤖",
+    link: "https://nexusflow.ai/blogs/athene-v2"
   },
   {
     date: "Aug 2024",
     title: "Published paper at ACL Conference",
-    description: "Research on synthetic data generation through retrieval and transformation",
-    emoji: "📄"
+    description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets",
+    emoji: "🔬",
+    link: "https://aclanthology.org/2024.findings-acl.385/"
   },
   {
     date: "June 2024",
-    title: "Relocated to Bay Area",
-    description: "Joined Nexusflow as Machine Learning Engineer",
-    emoji: "🏙️"
+    title: "Joined Nexusflow as Machine Learning Engineer",
+    description: "Relocated to Bay Area",
+    emoji: "🏙️",
+    link: "https://nexusflow.ai"
   },
   {
     date: "May 2024",
@@ -95,8 +99,21 @@ const About = () => {
                   <div className="pl-6">
                     {/* Title with emoji */}
                     <h3 className="text-base font-semibold text-foreground flex items-center">
-                      {highlight.emoji && <span className="mr-2">{highlight.emoji}</span>}
-                      {highlight.title}
+                      {highlight.emoji && (
+                        <span className="mr-2 text-base">{highlight.emoji}</span>
+                      )}
+                      {highlight.link ? (
+                        <a 
+                          href={highlight.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-primary transition-colors"
+                        >
+                          {highlight.title}
+                        </a>
+                      ) : (
+                        highlight.title
+                      )}
                     </h3>
                     
                     {/* Additional information (subheading or description) styled consistently */}
