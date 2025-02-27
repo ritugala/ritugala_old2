@@ -10,7 +10,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Highlights", href: "#about", isHash: true },
+  { label: "Home", href: "#about", isHash: true },
   { label: "Experience", href: "/experience", isHash: false },
   { label: "Education", href: "/education", isHash: false },
   { label: "Projects", href: "/projects", isHash: false },
