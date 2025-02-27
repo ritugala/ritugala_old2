@@ -132,7 +132,7 @@ const Hero = () => {
           </div>
           <div className="pt-3 text-left font-mono text-sm space-y-2">
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">whoami</span></div>
-            <div className="text-primary">&gt; Machine Learning Engineer with expertise in NLP and LLMs</div>
+            <div className="text-primary">&gt; Machine Learning Engineer who likes running and writing</div>
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">contact</span></div>
             <div className="flex flex-wrap gap-2 mt-1">
               <a href="mailto:ritugala13@gmail.com" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
@@ -143,6 +143,9 @@ const Hero = () => {
               </a>
               <a href="https://github.com/ritugala" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
                 GitHub
+              </a>
+              <a href="https://x.com/ritugala13" target="_blank" rel="noopener noreferrer" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
+                Twitter
               </a>
             </div>
           </div>
