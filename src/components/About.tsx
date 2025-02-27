@@ -1,6 +1,30 @@
 
 import { motion } from "framer-motion";
-import { CodeIcon, Info } from "lucide-react";
+import { HistoryIcon } from "lucide-react";
+
+interface Highlight {
+  date: string;
+  title: string;
+  description?: string;
+}
+
+const highlights: Highlight[] = [
+  {
+    date: "Aug 2024",
+    title: "Published ACL Paper",
+    description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets"
+  },
+  {
+    date: "June 2024",
+    title: "Moved to Bay Area",
+    description: "Started working as Machine Learning Engineer at Nexusflow"
+  },
+  {
+    date: "May 2024",
+    title: "Graduated from Carnegie Mellon University",
+    description: "Master of Science in AI and Innovation"
+  }
+];
 
 const About = () => {
   return (
@@ -12,8 +36,8 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="section-title neon-glow flex items-center gap-2"
       >
-        <CodeIcon size={16} />
-        <span>About</span>
+        <HistoryIcon size={16} />
+        <span>Highlights</span>
       </motion.h2>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,24 +51,38 @@ const About = () => {
           <span className="terminal-dot dot-yellow"></span>
           <span className="terminal-dot dot-green"></span>
         </div>
-        <div className="pt-4 font-mono text-sm space-y-6">
-          <p className="leading-relaxed">
-            <span className="text-primary">function</span> <span className="text-accent">getProfile</span>() {'{'}
-          </p>
-          <p className="leading-relaxed pl-4">
-            I'm a Machine Learning Engineer with expertise in building and optimizing AI models and systems. 
-            With a strong foundation in Computer Science and Artificial Intelligence from Carnegie Mellon University, 
-            I specialize in developing efficient machine learning solutions for complex technical challenges.
-          </p>
-          <p className="leading-relaxed pl-4">
-            My experience spans across various domains including machine learning engineering, data science, and software 
-            development. I'm particularly interested in Large Language Models, synthetic data generation, and building 
-            systems that improve efficiency and reduce latency. I have a proven track record of implementing solutions 
-            that significantly improve performance metrics across different applications.
-          </p>
-          <p className="leading-relaxed">
-            {'}'}
-          </p>
+        <div className="pt-4 font-mono text-sm">
+          <div className="space-y-6 relative">
+            {/* Vertical timeline line */}
+            <div className="absolute left-16 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent"></div>
+            
+            {highlights.map((highlight, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+                className="flex items-start"
+              >
+                <div className="w-32 text-right pr-4 font-semibold text-primary">
+                  {highlight.date}
+                </div>
+                
+                <div className="relative">
+                  {/* Dot on timeline */}
+                  <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
+                  
+                  <div className="pl-6">
+                    <h3 className="text-base font-semibold">{highlight.title}</h3>
+                    {highlight.description && (
+                      <p className="text-muted-foreground mt-1">{highlight.description}</p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>
