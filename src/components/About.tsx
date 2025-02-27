@@ -87,9 +87,7 @@ const About = () => {
                     
                     {/* Additional information (subheading or description) styled consistently */}
                     {highlight.subheading && (
-                      <p className="text-xs text-muted-foreground mt-1">
-                        <span className="text-primary">{highlight.subheading}</span>
-                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">{highlight.subheading}</p>
                     )}
                     {highlight.description && (
                       <p className="text-xs text-muted-foreground mt-1">{highlight.description}</p>
