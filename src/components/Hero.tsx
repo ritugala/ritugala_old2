@@ -125,7 +125,7 @@ const Hero = () => {
           </div>
           <div className="pt-3 text-left font-mono text-sm space-y-2">
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">whoami</span></div>
-            <div className="text-primary">&gt; Optimizer of algorithms by day, optimizer of endorphins through solo adventures by night</div>
+            <div className="text-primary">&gt; Optimizes algorithms by day, optimizes decisions by night</div>
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">contact</span></div>
             <div className="flex flex-wrap gap-2 mt-1">
               <a href="mailto:ritugala13@gmail.com" className="text-xs bg-muted px-2 py-1 rounded hover:bg-primary hover:text-primary-foreground transition-colors">
