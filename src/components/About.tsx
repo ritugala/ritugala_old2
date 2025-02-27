@@ -52,7 +52,7 @@ const About = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="max-w-3xl mx-auto px-4 py-8 md:py-12 relative">
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
