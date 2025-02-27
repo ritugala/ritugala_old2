@@ -84,40 +84,25 @@ const Hero = () => {
       {/* Simplified background */}
       <div className="absolute inset-0 grid-bg opacity-10"></div>
       
-      <div className="text-center px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="mb-4 flex justify-center"
-        >
+      <motion.div 
+        className="text-center px-4 relative z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="mb-4 flex justify-center">
           <Terminal className="w-12 h-12 text-primary" />
-        </motion.div>
+        </div>
         
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-6xl font-bold mb-3 glow font-mono"
-        >
+        <h1 className="text-4xl md:text-6xl font-bold mb-3 glow font-mono">
           RITU GALA
-        </motion.h1>
+        </h1>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl md:text-2xl text-muted-foreground mb-6 font-mono"
-        >
+        <div className="text-xl md:text-2xl text-muted-foreground mb-6 font-mono">
           <TypeWriter text="Machine Learning Engineer" speed={100} />
-        </motion.div>
+        </div>
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="terminal mb-10 inline-block px-6 py-3 max-w-md mx-auto"
-        >
+        <div className="terminal mb-10 inline-block px-6 py-3 max-w-md mx-auto">
           <div className="terminal-dots">
             <span className="terminal-dot dot-red"></span>
             <span className="terminal-dot dot-yellow"></span>
@@ -142,8 +127,8 @@ const Hero = () => {
               </a>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 };
