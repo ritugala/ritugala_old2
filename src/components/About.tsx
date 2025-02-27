@@ -10,6 +10,10 @@ interface Highlight {
 
 const highlights: Highlight[] = [
   {
+    date: "Feb 2025",
+    title: "Vibe coded this website",
+  },
+  {
     date: "Aug 2024",
     title: "Published ACL Paper",
     description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets"
