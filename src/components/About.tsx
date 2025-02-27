@@ -27,15 +27,16 @@ const highlights: Highlight[] = [
   },
   {
     date: "Aug 2024",
-    title: "Published paper at ACL Conference",
+    title: "Published at ACL 2024 Conference",
     description: "Better Synthetic Data by Retrieving and Transforming Existing Datasets",
+    subheading: "With Graham Neubig and Sherry Wu",
     emoji: "🔬",
     link: "https://aclanthology.org/2024.findings-acl.385/"
   },
   {
     date: "June 2024",
     title: "Joined Nexusflow as Machine Learning Engineer",
-    description: "Relocated to Bay Area",
+    description: "Relocated to the vibrant tech ecosystem of the Bay Area",
     emoji: "🏙️",
     link: "https://nexusflow.ai"
   },
@@ -100,7 +101,7 @@ const About = () => {
                     {/* Title with emoji */}
                     <h3 className="text-base font-semibold text-foreground flex items-center">
                       {highlight.emoji && (
-                        <span className="mr-2 text-base">{highlight.emoji}</span>
+                        <span className="mr-2 text-lg">{highlight.emoji}</span>
                       )}
                       {highlight.link ? (
                         <a 
