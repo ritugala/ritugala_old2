@@ -9,7 +9,6 @@ interface EducationItem {
   year: string;
   location: string;
   gpa?: string;
-  courses?: string[];
   additionalInfo?: string[];
 }
 
@@ -21,15 +20,6 @@ const educationItems: EducationItem[] = [
     year: "2024",
     location: "Pittsburgh, PA",
     gpa: "GPA: 4.0/4.0",
-    courses: [
-      "Deep Learning",
-      "Advanced Natural Language Processing (NLP)",
-      "Large Language Models",
-      "Machine Learning with Large Datasets",
-      "Machine Learning in Production",
-      "Machine Learning",
-      "Behavioral Decision Making"
-    ],
     additionalInfo: [
       "Teaching Assistant: Generative AI, Coding Bootcamp and Algorithms"
     ]
@@ -91,13 +81,6 @@ const Education = () => {
                   
                   {item.gpa && (
                     <p className="text-sm mb-2 text-muted-foreground">{item.gpa}</p>
-                  )}
-                  
-                  {item.courses && (
-                    <div className="mb-2">
-                      <p className="text-sm font-medium mb-1 text-muted-foreground">Relevant Courses:</p>
-                      <p className="text-sm text-muted-foreground">{item.courses.join("; ")}</p>
-                    </div>
                   )}
                   
                   {item.additionalInfo && (
