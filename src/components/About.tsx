@@ -71,21 +71,28 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="flex items-start"
               >
+                {/* Date column */}
                 <div className="w-32 shrink-0 text-right pr-4 font-semibold text-primary">
                   {highlight.date}
                 </div>
                 
+                {/* Content column */}
                 <div className="relative grow">
                   {/* Dot on timeline */}
                   <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
                   
                   <div className="pl-6">
-                    <h3 className="text-base font-semibold">{highlight.title}</h3>
+                    {/* Title */}
+                    <h3 className="text-base font-semibold text-foreground">{highlight.title}</h3>
+                    
+                    {/* Additional information (subheading or description) styled consistently */}
                     {highlight.subheading && (
-                      <p className="text-xs text-primary italic mt-1">{highlight.subheading}</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        <span className="text-primary">{highlight.subheading}</span>
+                      </p>
                     )}
                     {highlight.description && (
-                      <p className="text-muted-foreground mt-1">{highlight.description}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{highlight.description}</p>
                     )}
                   </div>
                 </div>
