@@ -18,7 +18,9 @@ const experiences: ExperienceItem[] = [
     company: "Nexusflow.ai",
     companyUrl: "https://nexusflow.ai",
     description: [
-      "Post-trained open-source models to improve agentic capabilities with a focus on function/tool-calling, and improved model inference latency by 25% using Speculative Decoding Methods."
+      "Post-trained open-source models to improve agentic capabilities with a focus on function/tool-calling.",
+      "Improved model inference latency by 25% using Speculative Decoding Methods.",
+      "Collaborated with cross-functional teams to integrate models into production systems and optimize performance."
     ],
     current: true
   },
@@ -27,7 +29,9 @@ const experiences: ExperienceItem[] = [
     position: "Data Science Intern",
     company: "Oracle",
     description: [
-      "Developed a negative data generation algorithm yielding 10 million data points to create classification models predicting redemption rates with 94% recall, and prototyped an automated Q&A system using Retrieval Augmented Generation."
+      "Developed a negative data generation algorithm yielding 10 million data points for classification models.",
+      "Created models predicting redemption rates with 94% recall using advanced machine learning techniques.",
+      "Prototyped an automated Q&A system using Retrieval Augmented Generation to improve customer support operations."
     ]
   },
   {
@@ -35,7 +39,9 @@ const experiences: ExperienceItem[] = [
     position: "Software Engineer",
     company: "Goldman Sachs",
     description: [
-      "Implemented an ETL pipeline utilizing Kafka for cloud migration (S3, Redshift) supporting 300+ simultaneous clients, while maintaining and improving the existing relational distributed database system."
+      "Implemented an ETL pipeline utilizing Kafka for cloud migration (S3, Redshift) supporting 300+ simultaneous clients.",
+      "Maintained and improved the existing relational distributed database system, increasing query performance by 15%.",
+      "Collaborated with global teams to design and implement scalable solutions for data processing and analysis."
     ]
   }
 ];
