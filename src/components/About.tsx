@@ -6,14 +6,12 @@ interface Highlight {
   date: string;
   title: string;
   description?: string;
-  subheading?: string;
 }
 
 const highlights: Highlight[] = [
   {
     date: "Feb 2025",
-    title: "Vibe coded this website",
-    subheading: "w lovable"
+    title: "Vibe coded this website w lovable",
   },
   {
     date: "Aug 2024",
@@ -80,14 +78,7 @@ const About = () => {
                   <div className="absolute -left-[4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
                   
                   <div className="pl-6">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-base font-semibold">{highlight.title}</h3>
-                      {highlight.subheading && (
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-primary bg-opacity-20 text-primary">
-                          {highlight.subheading}
-                        </span>
-                      )}
-                    </div>
+                    <h3 className="text-base font-semibold">{highlight.title}</h3>
                     {highlight.description && (
                       <p className="text-muted-foreground mt-1">{highlight.description}</p>
                     )}
