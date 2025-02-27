@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ChevronDown, Terminal, Code, Server } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Matrix rain effect component
@@ -76,13 +76,6 @@ const TypeWriter = ({ text, speed = 100 }: { text: string, speed?: number }) => 
 };
 
 const Hero = () => {
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth"
-    });
-  };
-
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       {/* Matrix-like background */}
@@ -151,21 +144,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10"
-      >
-        <button 
-          onClick={scrollToContent}
-          className="p-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors animate-bounce"
-          aria-label="Scroll down"
-        >
-          <ChevronDown size={20} />
-        </button>
-      </motion.div>
     </section>
   );
 };
