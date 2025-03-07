@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -147,10 +146,11 @@
   }
 }
 
+/* Optimized matrix rain animation with reduced performance impact */
 @keyframes matrixRain {
   0% {
     transform: translateY(-100%);
-    opacity: 1;
+    opacity: 0.8;
   }
   100% {
     transform: translateY(1000%);
@@ -164,8 +164,9 @@
   font-family: 'JetBrains Mono', monospace;
   position: absolute;
   animation: matrixRain linear infinite;
-  font-size: 16px;
+  font-size: 14px;
   user-select: none;
+  will-change: transform, opacity;
 }
 
 .grid-bg {
