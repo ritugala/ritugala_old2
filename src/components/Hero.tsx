@@ -77,7 +77,7 @@ const TypeWriter = ({ text, speed = 100 }: { text: string, speed?: number }) => 
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       {/* Matrix-like background with reduced opacity */}
       <MatrixRain />
       
@@ -85,30 +85,30 @@ const Hero = () => {
       <div className="absolute inset-0 grid-bg opacity-10"></div>
       
       <motion.div 
-        className="text-center px-4 relative z-10"
+        className="text-center px-4 relative z-10 max-w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div className="mb-4 flex justify-center">
-          <Terminal className="w-12 h-12 text-primary" />
+          <Terminal className="w-10 h-10 md:w-12 md:h-12 text-primary" />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-3 glow font-mono">
+        <h1 className="text-3xl md:text-6xl font-bold mb-3 glow font-mono">
           RITU GALA
         </h1>
         
-        <div className="text-xl md:text-2xl text-muted-foreground mb-6 font-mono">
+        <div className="text-lg md:text-2xl text-muted-foreground mb-6 font-mono">
           <TypeWriter text="Machine Learning Engineer" speed={100} />
         </div>
         
-        <div className="terminal mb-10 inline-block px-6 py-3 max-w-md mx-auto">
+        <div className="terminal mb-8 inline-block px-4 py-3 md:px-6 md:py-3 max-w-[95%] md:max-w-md mx-auto">
           <div className="terminal-dots">
             <span className="terminal-dot dot-red"></span>
             <span className="terminal-dot dot-yellow"></span>
             <span className="terminal-dot dot-green"></span>
           </div>
-          <div className="pt-3 text-left font-mono text-sm space-y-2">
+          <div className="pt-3 text-left font-mono text-xs md:text-sm space-y-2">
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">whoami</span></div>
             <div className="text-primary">&gt; I work with LLMs, and pursue side quests in Decision Science</div>
             <div><span className="text-primary">$</span> <span className="text-muted-foreground">contact</span></div>
