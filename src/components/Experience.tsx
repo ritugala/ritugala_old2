@@ -74,16 +74,16 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
-                className="flex flex-col md:flex-row gap-3 md:gap-6"
+                className="flex gap-6"
               >
                 <div className="flex items-center self-start">
-                  <div className={`text-xs md:text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full whitespace-nowrap`}>
+                  <div className={`text-sm font-medium ${exp.current ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"} px-2 py-0.5 rounded-full whitespace-nowrap`}>
                     {exp.duration}
                   </div>
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-base md:text-lg font-medium flex flex-wrap gap-1 items-center">
+                  <h3 className="text-lg font-medium flex flex-wrap gap-1 items-center">
                     <span>{exp.position}</span>
                     <span className="text-muted-foreground">at</span>
                     {exp.companyUrl ? (
@@ -102,7 +102,7 @@ const Experience = () => {
                   </h3>
                   <ul className="mt-2 list-disc pl-5 space-y-2">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item}</li>
+                      <li key={i} className="text-sm text-muted-foreground leading-relaxed">{item}</li>
                     ))}
                   </ul>
                 </div>

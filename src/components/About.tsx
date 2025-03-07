@@ -52,7 +52,7 @@ const About = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="about" className="max-w-3xl mx-auto px-4 py-6 md:py-8 relative">
+    <section id="about" className="max-w-3xl mx-auto px-4 py-8 md:py-12 relative">
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ const About = () => {
           <div className="space-y-6 relative">
             {/* Animated vertical timeline line */}
             <motion.div 
-              className="absolute left-10 md:left-16 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent origin-top"
+              className="absolute left-16 top-2 bottom-2 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent origin-top"
               style={{ scaleY: lineHeight }}
             ></motion.div>
             
@@ -92,8 +92,8 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
                 className="flex items-start"
               >
-                {/* Date column - smaller on mobile */}
-                <div className="w-20 md:w-32 shrink-0 text-right pr-4 font-semibold text-primary text-xs md:text-sm">
+                {/* Date column */}
+                <div className="w-32 shrink-0 text-right pr-4 font-semibold text-primary">
                   {highlight.date}
                 </div>
                 
@@ -110,14 +110,14 @@ const About = () => {
                   
                   <div className="pl-6">
                     {/* Title with emoji */}
-                    <h3 className="text-sm md:text-base font-semibold text-foreground flex items-center flex-wrap">
+                    <h3 className="text-base font-semibold text-foreground flex items-center">
                       {highlight.emoji && (
                         <motion.span 
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 * index }}
-                          className="mr-2 text-base md:text-lg"
+                          className="mr-2 text-lg"
                         >
                           {highlight.emoji}
                         </motion.span>
