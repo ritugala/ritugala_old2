@@ -4,18 +4,17 @@ import { Terminal } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Matrix rain effect component with reduced particle count
+// Matrix rain effect component with reduced particle count - desktop only
 const MatrixRain = () => {
   const [characters, setCharacters] = useState<{id: number, x: number, y: number, char: string, duration: number}[]>([]);
-  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Characters for matrix rain
     const matrixChars = "01";
     const generateRandom = () => {
       const newCharacters = [];
-      // Even fewer characters on mobile
-      const totalChars = isMobile ? 30 : 60; 
+      // Further reduced character count
+      const totalChars = 40; 
       
       for (let i = 0; i < totalChars; i++) {
         newCharacters.push({
@@ -23,7 +22,7 @@ const MatrixRain = () => {
           x: Math.random() * 100, // percentage position
           y: Math.random() * 100,
           char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
-          duration: Math.random() * (isMobile ? 15 : 10) + 5, // slower animation on mobile
+          duration: Math.random() * 12 + 8, // seconds for animation, slower
         });
       }
       
@@ -32,13 +31,13 @@ const MatrixRain = () => {
     
     generateRandom();
     
-    // Regenerate less frequently, especially on mobile
+    // Regenerate less frequently
     const interval = setInterval(() => {
       generateRandom();
-    }, isMobile ? 20000 : 15000); // even longer interval on mobile
+    }, 20000); // longer interval
     
     return () => clearInterval(interval);
-  }, [isMobile]);
+  }, []);
   
   return (
     <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
@@ -59,28 +58,44 @@ const MatrixRain = () => {
   );
 };
 
-// Simplified typing effect
-const TypeWriter = ({ text, speed = 100 }: { text: string, speed?: number }) => {
+// Simplified typing effect with no animation on mobile
+const TypeWriter = ({ text }: { text: string }) => {
+  const isMobile = useIsMobile();
+  
+  // On mobile, just display the full text without animation
+  if (isMobile) {
+    return <span className="font-mono">{text}</span>;
+  }
+  
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isMobile = useIsMobile();
   
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setDisplayText(prev => prev + text[currentIndex]);
         setCurrentIndex(prev => prev + 1);
-      }, isMobile ? speed * 1.5 : speed); // slower typing on mobile
+      }, 100);
       
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, text, speed, isMobile]);
+  }, [currentIndex, text]);
   
   return <span className="typing font-mono">{displayText}</span>;
 };
 
 const Hero = () => {
   const isMobile = useIsMobile();
+  
+  // Simpler motion settings for mobile
+  const motionProps = isMobile ? {
+    initial: { opacity: 1 },
+    animate: { opacity: 1 }
+  } : {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.8 }
+  };
   
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
@@ -92,9 +107,7 @@ const Hero = () => {
       
       <motion.div 
         className="text-center px-4 relative z-10 max-w-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        {...motionProps}
       >
         <div className="mb-4 flex justify-center">
           <Terminal className="w-10 h-10 md:w-12 md:h-12 text-primary" />
@@ -105,7 +118,7 @@ const Hero = () => {
         </h1>
         
         <div className="text-lg md:text-2xl text-muted-foreground mb-6 font-mono">
-          <TypeWriter text="Machine Learning Engineer" speed={isMobile ? 120 : 100} />
+          <TypeWriter text="Machine Learning Engineer" />
         </div>
         
         <div className="terminal mb-8 inline-block px-4 py-3 md:px-6 md:py-3 max-w-[95%] md:max-w-md mx-auto">

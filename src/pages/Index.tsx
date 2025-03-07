@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type LocationState = {
   scrollToSection?: string;
@@ -13,6 +14,7 @@ type LocationState = {
 const Index = () => {
   const location = useLocation();
   const state = location.state as LocationState;
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Check if we need to scroll to a section based on navigation state
@@ -21,16 +23,16 @@ const Index = () => {
       if (target) {
         setTimeout(() => {
           window.scrollTo({
-            top: target.offsetTop - 80,
+            top: target.offsetTop - (isMobile ? 60 : 80),
             behavior: "smooth"
           });
-        }, 100); // Small delay to ensure DOM is fully loaded
+        }, 100);
       }
       
       // Clear the state so we don't scroll again on page refresh
       window.history.replaceState({}, document.title);
     }
-  }, [state]);
+  }, [state, isMobile]);
 
   return (
     <div className="min-h-screen bg-background antialiased relative overflow-x-hidden">
